@@ -50,7 +50,7 @@ function checkAPA(){
     const yearPattern = /\(\d{4}(, [A-Za-z]+ \d{1,2})?\)/;
     checks.push({key:'年份格式', ok: yearPattern.test(entry), hint:'(2021) 或 (2020, April 15)'});
 
-    const authorPattern = /^([A-Z][a-zA-Z\-]+, [A-Z]\.?)(, [A-Z][a-zA-Z\-]+, [A-Z]\.?)*(& [A-Z][a-zA-Z\-]+, [A-Z]\.?)/;
+    const authorPattern = /^([A-Z][a-zA-Z\-]+,\s+[A-Z]\.(\s*[A-Z]\.)?)(,\s+[A-Z][a-zA-Z\-]+,\s+[A-Z]\.(\s*[A-Z]\.)?)*(\s*&\s*[A-Z][a-zA-Z\-]+,\s+[A-Z]\.(\s*[A-Z]\.)?)?$/;
     checks.push({key:'作者格式', ok: authorPattern.test(entry), hint:'Lastname, F. M., & Other, F. M.'});
 
     const titlePattern = /[A-Za-z0-9\s:]+[.,]/;
