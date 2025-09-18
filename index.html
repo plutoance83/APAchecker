@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>APA 格式檢查器</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>APA 格式檢查器（GitHub Pages 版）</h1>
+
+    <label for="type">選擇要檢查的參考文獻類型：</label>
+    <select id="type">
+      <option value="auto">自動偵測（建議）</option>
+      <option value="journal">期刊文章 (Journal)</option>
+      <option value="book">書籍 (Book)</option>
+      <option value="web">網頁 (Webpage)</option>
+    </select>
+
+    <label for="input">請貼上你的參考文獻（多筆請以空白行分隔）：</label>
+    <textarea id="input" rows="8" placeholder="範例：Smith, J. A., &amp; Lee, K. B. (2020). Exploring learning analytics. Journal of Education, 15(3), 45-60. https://doi.org/10.1234/abcd"></textarea>
+
+    <div class="buttons">
+      <button id="checkBtn">檢查格式</button>
+      <button id="sampleBtn">載入測試範例</button>
+      <button id="clearBtn">清除</button>
+    </div>
+
+    <div id="results"></div>
+
+    <section class="note">
+      <h3>注意</h3>
+      <ul>
+        <li>本工具以前端 RegEx 與規則判斷為主，屬實務輔助檢查，並非涵蓋 APA 每一細節。</li>
+        <li>若你需要自動修正（auto-correct）、批次上傳或伺服器端更進階 NLP 驗證，可再加後端（例如 FastAPI / Flask）或引入更多資料庫。</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
